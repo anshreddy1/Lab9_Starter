@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lab 9</title>
+
+  <!-- ─────────────────────────────────────────────────────────────────────
+       OPTIONAL: If you sign up for TrackJS, you get a <script> snippet like this.
+       Replace the `YOUR_TOKEN_HERE` with the token TrackJS gives you,
+       and uncomment these two lines. Then TrackJS will automatically
+       capture client‐side errors for you. 
+  ───────────────────────────────────────────────────────────────────── -->
+  <!-- 
+  <script>
+    window.trackJSErrors = true;
+    window.trackJS = {
+      token: "YOUR_TOKEN_HERE"
+    };
+  </script>
+  <script src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+  -->
 
   <style>
     button {
       margin: 3px;
     }
-
     button:hover {
       cursor: pointer;
     }
-
     #first-num,
     #second-num {
       width: 60px;
     }
-
     output {
       border: 1px solid gray;
       display: block;
@@ -29,11 +41,9 @@
       padding: 5px;
       width: 240px;
     }
-
     main {
       width: 800px;
     }
-
     #error-btns {
       column-gap: 5px;
       display: flex;
@@ -41,14 +51,12 @@
       margin-top: 30px;
       row-gap: 5px;
     }
-
-    #error-btns>* {
+    #error-btns > * {
       padding: 8px 2px;
       width: 122px;
     }
   </style>
 </head>
-
 <body>
   <main>
     <form>
@@ -87,22 +95,9 @@
     </section>
   </main>
 
-  <script>
-    let form = document.querySelector('form');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      let output = document.querySelector('output');
-      let firstNum = document.querySelector('#first-num').value;
-      let secondNum = document.querySelector('#second-num').value;
-      let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
-    });
-
-    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-
-    // Start your code here
-    // You may move this JS to another file if you wish
-  </script>
+  <!-- ─────────────────────────────────────────────────────────────────────
+       POINT TO OUR NEW SCRIPT.JS
+  ───────────────────────────────────────────────────────────────────── -->
+  <script src="script.js"></script>
 </body>
-
 </html>
